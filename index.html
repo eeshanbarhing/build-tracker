@@ -234,8 +234,6 @@ const HEADERS = { "Content-Type": "application/json", "apikey": SUPABASE_KEY, "A
 // ─── AUTH HELPERS ─────────────────────────────────────────────────────────────
 const auth = {
   async signInWithGoogle() {
-    const r = await fetch(`${SUPABASE_URL}/auth/v1/authorize?provider=google&redirect_to=${encodeURIComponent("https://eeshanbarhing.github.io/m440i-build/")}`, { headers: { "apikey": SUPABASE_KEY } });
-    // Redirect-based flow
     window.location.href = `${SUPABASE_URL}/auth/v1/authorize?provider=google&redirect_to=${encodeURIComponent("https://eeshanbarhing.github.io/m440i-build/")}`;
   },
   async getSession() {
